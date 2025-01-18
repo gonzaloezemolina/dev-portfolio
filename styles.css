@@ -11,6 +11,11 @@
     }
 }
 
+@font-face {
+    font-family: "Bebas-R";
+    src: url("./font/BebasNeue-Regular.ttf");
+}
+
 .light-theme{
     transition: .5s;
     background-color: white;
@@ -29,13 +34,14 @@ header{
     align-items: center;
     padding: 10px 50px;
     border: 1px solid green;
+    font-family: "Bebas-R";
 }
 
 nav{
-    border: 1px solid red;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 35%;
 }
 
 nav ul{
