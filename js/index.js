@@ -11,12 +11,16 @@ const getExperience = document.getElementById('experience');
 const getAbout = document.getElementById('about');
 
 const createHomeStructure = () => {
-    const home = document.createElement('div');
-    home.innerHTML = `
+    
+    getHome.innerHTML = `
+    <div>
         <h1 data-i18n="hero.greeting">Hola! Soy Gonzalo.</h1>
-        <p data-i18n="hero.role">Desarrollador Fullstack</p>
+        <p class="fullstack" data-i18n="hero.role">Desarrollador Fullstack</p>
+    </div>
+    <div class="home_text">
+        <p>Ayudo a negocios a resolver los siguientes 3 problemas: La falta de presencia digital efectiva, desarrollando sitios web funcionales y atractivos para mejorar la experiencia del usuario y atraer más clientes. La ineficiencia en procesos internos y externos, creando soluciones personalizadas como sistemas CRM o integraciones backend. Además, la baja conversión de clientes potenciales, aplicando estrategias de Marketing Digital y redacción persuasiva para mejorar la comunicación y maximizar los resultados comerciales.</p>
+    </div>
     `;
-    getHome.appendChild(home);
 };
 
 createHomeStructure();
@@ -152,13 +156,13 @@ const createSkillsStructure = () => {
         },
     ]
     getSkills.innerHTML = `
-        <div>
+        <div class="skills_intro">
             <h2>Mis habilidades</h2>
             <p>Este es el conjunto de técnologias que mejor se utilizar. Me desempeño correctamente con Javascript y Python y tengo conocimientos en bases de datos NoSQL y SQL.</p>
         </div>
         <div class="skills_container">
             <div class="skills_category languages">
-                <h3>Languages</h3>
+                <h3>Lenguajes de programación</h3>
                 <div class="skills_items" id="languages"></div>
             </div>
             <div class="skills_category frontend">
@@ -170,11 +174,11 @@ const createSkillsStructure = () => {
                 <div class="skills_items" id="backend"></div>
             </div>
             <div class="skills_category database">
-                <h3>Databases</h3>
+                <h3>Bases de datos</h3>
                 <div class="skills_items" id="database"></div>
             </div>
             <div class="skills_category other">
-                <h3>Other technologies</h3>
+                <h3>Otras tecnologías</h3>
                 <div class="skills_items" id="other"></div>
             </div>
         </div>
@@ -191,7 +195,7 @@ const createSkillsStructure = () => {
         skillDiv.classList.add('skills_item');
         skillDiv.innerHTML = `
                 ${skill.icon}
-                <p>${skill.name}</p>
+                <p class="skill_desc">${skill.name}</p>
         `;
         if (categories[skill.type]) {
             categories[skill.type].appendChild(skillDiv);

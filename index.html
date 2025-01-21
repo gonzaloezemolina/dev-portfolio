@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./img/code-white.png" type="image/x-png">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="light-theme">
     <header>
@@ -42,6 +43,11 @@
     </header>
 
     <main>
+        <div class="whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=5403415621921" target="_blank" class='linktow' title='Hablemos por WhatsApp!'>
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
         <section class="home" id="home"></section>
         <section class="projects" id="projects"></section>
         <section class="skills" id="skills"></section>
@@ -51,9 +57,16 @@
     </main>
 
     <footer>
-        <a href="https://iconscout.com/icons/postman" class="text-underline font-size-sm" target="_blank">우편 집배원</a> by <a href="https://iconscout.com/contributors/icon-54" class="text-underline font-size-sm" target="_blank">Icon 54</a>
+        <div class="footer_title">
+            <h5>Contactame</h5>
+            <p>Podemos conectar en LinkedIn o puedes escribirme un mensaje a través de gmail.</p>
+        </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="./js/index.js"></script>
     <script src="./js/translation.js"></script>
     <script src="./js/language-switcher.js"></script>
