@@ -12,6 +12,7 @@
     button{
         cursor: pointer;
         border: none;
+        background-color: unset;
     }
 }
 
@@ -90,9 +91,13 @@ html {
         left: 0;
         transition: width 0.3s ease;
     }
-    
     nav ul li:hover::after{
         width: 100%;
+    }
+    .download{
+        background-color: black;
+        color: white;
+        border: 1px solid black;
     }
 }
 
@@ -132,6 +137,14 @@ html {
     nav ul li:hover::after{
         width: 100%;
     }
+    #translate{
+        color: white;
+    }
+    .download{
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+    }
 }
 
 header{
@@ -143,6 +156,65 @@ header{
     position: fixed;
     width: 100%;
 }
+
+/* From Uiverse.io by namecho */ 
+.switch {
+    --button-width: 2.5em;
+    --button-height: 1em;
+    --toggle-diameter: 0.8em;
+    --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+    --toggle-shadow-offset: 10px;
+    --toggle-wider: 3em;
+    --color-grey: rgba(230, 231, 227, 0.671);
+    --color-green: rgba(32, 32, 32, 0.733);
+    cursor: pointer;
+   }
+   
+   .slider {
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--color-grey);
+    border-radius: calc(var(--button-height) / 2);
+    position: relative;
+    transition: 0.2s all ease-in-out;
+   }
+   
+   .slider::after {
+    content: "";
+    display: inline-block;
+    width: var(--toggle-diameter);
+    height: var(--toggle-diameter);
+    background-color: #fff;
+    border-radius: calc(var(--toggle-diameter) / 2);
+    position: absolute;
+    top: var(--button-toggle-offset);
+    transform: translateX(var(--button-toggle-offset));
+    box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+    transition: 0.2s all ease-in-out;
+   }
+   
+   .switch input[type="checkbox"]:checked + .slider {
+    background-color: var(--color-green);
+   }
+   
+   .switch input[type="checkbox"]:checked + .slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+    box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+   }
+   
+   .switch input[type="checkbox"] {
+    display: none;
+   }
+   
+   .switch input[type="checkbox"]:active + .slider::after {
+    width: var(--toggle-wider);
+   }
+   
+   .switch input[type="checkbox"]:checked:active + .slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+   }
+   
 
 nav{
     display: flex;
@@ -168,9 +240,16 @@ nav ul li{
     gap: 20px;
 }
 
+.nav-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .nav-right ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     gap: 20px;
 }
@@ -255,6 +334,12 @@ section{
         justify-content: space-between;
         align-items: center;
     }
+}
+
+.download{
+    font-family: "Maison-Bold";
+    border-radius: 10px;
+    padding: 10px 20px;
 }
 
 .skills_intro{

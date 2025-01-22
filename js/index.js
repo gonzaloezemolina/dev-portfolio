@@ -21,8 +21,8 @@ const createHomeStructure = () => {
         <p>Ayudo a negocios a resolver los siguientes 3 problemas: La falta de presencia digital efectiva, desarrollando sitios web funcionales y atractivos para mejorar la experiencia del usuario y atraer más clientes. La ineficiencia en procesos internos y externos, creando soluciones personalizadas como sistemas CRM o integraciones backend. Además, la baja conversión de clientes potenciales, aplicando estrategias de Marketing Digital y redacción persuasiva para mejorar la comunicación y maximizar los resultados comerciales.</p>
     </div>
     <div class="home_buttons">
-        <a>
-            <button>Descarga mi CV</button>
+        <a  href="./GonzaloMolina CV.pdf" download="" title='Download CV'>
+            <button class="download">Descarga mi CV</button>
         </a>
         <div class="home_social">
             <a href="https://www.linkedin.com/in/gonzalo-molina-991345294/" target="_blank"><i class="bi bi-linkedin"></i></a>
