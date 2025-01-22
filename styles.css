@@ -41,6 +41,10 @@ body::-webkit-scrollbar{
     background: white;
   }
 
+h2{
+    font-size: 4rem;
+}
+
 h3{
     font-family: "Maison-Bold";
 }
@@ -192,6 +196,33 @@ main{
     text-decoration: none;
 }
 
+.arrows_container{
+    display: flex;
+    gap: 20px;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    margin: 25px; 
+    padding: 10px; 
+    border-radius: 30px;
+    z-index: 9999;
+}
+
+.arrow{
+    cursor: pointer;
+}
+
+#arrow_down:hover{
+    transition: .5s;
+    transform: translateY(10px);
+}
+
+#arrow_up:hover{
+    transition: .5s;
+    transform: translateY(-10px);
+}
+
+
 section{
     height: 100vh;
 }
@@ -211,6 +242,18 @@ section{
     .home_text{
         width: 50%;
         text-align: justify;
+    }
+    .home_buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+    }
+    .home_social{
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
