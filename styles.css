@@ -32,6 +32,33 @@
     src: url("./font/fonnts.com-Maison_Neue_Bold.ttf");
 }
 
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    border-radius: 50%; /* Make it a circle */
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+    transform: translate(-50%, -50%); /* Center the cursor */
+    z-index: 9999; /* Ensure it's above other elements */
+    transition: transform 0.1s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+  }
+  
+  /* Add a class for hover effects */
+  .custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Change color and size on hover */
+  }
+
+  .custom-cursor.click {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
 
 body::-webkit-scrollbar{
     background: rgb(0, 0, 0);
@@ -56,6 +83,7 @@ p{
 }
 
 html {
+    cursor: none;
     scroll-behavior: smooth;
   }
 
@@ -333,13 +361,25 @@ section{
         gap: 20px;
         justify-content: space-between;
         align-items: center;
+        i{
+            font-size: 1.7rem;
+        }
     }
 }
+
 
 .download{
     font-family: "Maison-Bold";
     border-radius: 10px;
     padding: 10px 20px;
+}
+
+.skills_section{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
 }
 
 .skills_intro{
@@ -351,6 +391,8 @@ section{
     padding: 2rem;
     text-align: center;
     margin: 2rem;
+    order: 2;
+    height: 100%;
 }
 
 .skills_container{
@@ -427,4 +469,58 @@ section{
     .skills_category.languages {
         grid-column: auto;
     }
+}
+
+.contact{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;  
+    justify-items: center;
+    height: 80vh;
+}
+
+.contact_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 2rem;
+    h5{
+        font-size: 4rem;
+    }
+}
+
+.contact_social{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 2rem;
+    }
+}
+
+.contact_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 2rem;
+    h5{
+        font-size: 4rem;
+    }
+}
+
+.contact_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 2rem;
 }

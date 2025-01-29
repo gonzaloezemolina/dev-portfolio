@@ -1,3 +1,33 @@
+// Select the custom cursor
+const cursor = document.querySelector('.custom-cursor');
+
+// Track mouse movement
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
+});
+
+// Add hover effects for interactive elements
+const hoverElements = document.querySelectorAll('a, button, .hover-effect'); // Add more selectors as needed
+
+hoverElements.forEach((element) => {
+  element.addEventListener('mouseenter', () => {
+    cursor.classList.add('hover');
+  });
+
+  element.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+});
+
+document.addEventListener('mousedown', () => {
+    cursor.classList.add('click');
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('click');
+  });
+
 const changeColor = document.getElementById('change-color');
 
 changeColor.addEventListener('click', () => {
@@ -9,6 +39,7 @@ const getProjects = document.getElementById('projects');
 const getSkills = document.getElementById('skills');
 const getExperience = document.getElementById('experience');
 const getAbout = document.getElementById('about');
+const getContact = document.getElementById('contact');
 
 const createHomeStructure = () => {
     
@@ -26,7 +57,9 @@ const createHomeStructure = () => {
         </a>
         <div class="home_social">
             <a href="https://www.linkedin.com/in/gonzalo-molina-991345294/" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/gonzaloezemolina" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://github.com/gonzaloezemolina" target="_blank">
+                <i class="bi bi-github"></i>
+            </a>
         </div>
     </div>
     `;
@@ -165,7 +198,8 @@ const createSkillsStructure = () => {
         },
     ]
     getSkills.innerHTML = `
-        <div class="skills_intro">
+    <div class="skills_section">
+    <div class="skills_intro">
             <h2>Mis habilidades</h2>
             <p>Este es el conjunto de técnologias que mejor se utilizar. Me desempeño correctamente con Javascript y Python y tengo conocimientos en bases de datos NoSQL y SQL.</p>
         </div>
@@ -191,6 +225,7 @@ const createSkillsStructure = () => {
                 <div class="skills_items" id="other"></div>
             </div>
         </div>
+    </div>
     `
     const categories = {
         language: document.getElementById('languages'),
@@ -213,3 +248,31 @@ const createSkillsStructure = () => {
 }
 
 createSkillsStructure();
+
+
+const createContactStructure = () => {
+    getContact.innerHTML = `
+    <div class="contact_left">
+        <div class="contact_text">
+            <h5>Contactame</h5>
+            <p>Podemos conectar en LinkedIn o puedes escribirme un mensaje a través de gmail. Además, te invito a seguirme en Github! y si tienes un proyecto en mente, puedes clickear el boton de WhatsApp para que podamos conversarlo.</p>
+        </div>
+        <div class="contact_social">
+            <a href="https://www.linkedin.com/in/gonzalo-molina-991345294/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/gonzaloezemolina" target="_blank">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+    </div>
+    <div class="contact_right">
+        <form>
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Mensaje"></textarea>
+            <button>Enviar</button>
+        </form>
+    </div>
+    `
+}
+
+createContactStructure();
