@@ -1,33 +1,3 @@
-// Select the custom cursor
-const cursor = document.querySelector('.custom-cursor');
-
-// Track mouse movement
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.pageX}px`;
-  cursor.style.top = `${e.pageY}px`;
-});
-
-// Add hover effects for interactive elements
-const hoverElements = document.querySelectorAll('a, button, .hover-effect'); // Add more selectors as needed
-
-hoverElements.forEach((element) => {
-  element.addEventListener('mouseenter', () => {
-    cursor.classList.add('hover');
-  });
-
-  element.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-});
-
-document.addEventListener('mousedown', () => {
-    cursor.classList.add('click');
-  });
-
-  document.addEventListener('mouseup', () => {
-    cursor.classList.remove('click');
-  });
-
 const changeColor = document.getElementById('change-color');
 
 changeColor.addEventListener('click', () => {
@@ -266,8 +236,10 @@ const createContactStructure = () => {
     </div>
     <div class="contact_right">
         <form>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Email">
+            <div class="contact_inputs">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+            </div>
             <textarea placeholder="Mensaje"></textarea>
             <button>Enviar</button>
         </form>
